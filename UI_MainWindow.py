@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'UI_MainWindow.ui'
 #
-# Created: Mon Jul 30 02:08:04 2012
+# Created: Sat Aug  4 04:51:18 2012
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -70,6 +70,19 @@ class Ui_MainWindow(object):
         self.lbl_NumOfGenText = QtGui.QLabel(self.centralwidget)
         self.lbl_NumOfGenText.setGeometry(QtCore.QRect(670, 70, 111, 21))
         self.lbl_NumOfGenText.setObjectName(_fromUtf8("lbl_NumOfGenText"))
+        self.grpBox_Scale = QtGui.QGroupBox(self.centralwidget)
+        self.grpBox_Scale.setGeometry(QtCore.QRect(660, 120, 131, 80))
+        self.grpBox_Scale.setFlat(False)
+        self.grpBox_Scale.setObjectName(_fromUtf8("grpBox_Scale"))
+        self.btn_ScaleIn = QtGui.QPushButton(self.grpBox_Scale)
+        self.btn_ScaleIn.setGeometry(QtCore.QRect(90, 30, 41, 41))
+        self.btn_ScaleIn.setObjectName(_fromUtf8("btn_ScaleIn"))
+        self.btn_ScaleOut = QtGui.QPushButton(self.grpBox_Scale)
+        self.btn_ScaleOut.setGeometry(QtCore.QRect(0, 30, 41, 41))
+        self.btn_ScaleOut.setObjectName(_fromUtf8("btn_ScaleOut"))
+        self.txt_ScaleNum = QtGui.QTextEdit(self.grpBox_Scale)
+        self.txt_ScaleNum.setGeometry(QtCore.QRect(45, 34, 41, 31))
+        self.txt_ScaleNum.setObjectName(_fromUtf8("txt_ScaleNum"))
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 803, 29))
@@ -96,6 +109,9 @@ class Ui_MainWindow(object):
         self.lbl_Fps.setText(QtGui.QApplication.translate("MainWindow", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.lbl_NumOfGen.setText(QtGui.QApplication.translate("MainWindow", "0", None, QtGui.QApplication.UnicodeUTF8))
         self.lbl_NumOfGenText.setText(QtGui.QApplication.translate("MainWindow", "# Generation", None, QtGui.QApplication.UnicodeUTF8))
+        self.grpBox_Scale.setTitle(QtGui.QApplication.translate("MainWindow", "Scale Field:", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_ScaleIn.setText(QtGui.QApplication.translate("MainWindow", "+0.1", None, QtGui.QApplication.UnicodeUTF8))
+        self.btn_ScaleOut.setText(QtGui.QApplication.translate("MainWindow", "-0.1", None, QtGui.QApplication.UnicodeUTF8))
 
 
 if __name__ == "__main__":

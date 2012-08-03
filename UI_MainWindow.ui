@@ -198,6 +198,58 @@ Auto Generation</string>
      <string># Generation</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="grpBox_Scale">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>120</y>
+      <width>131</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Scale Field:</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QPushButton" name="btn_ScaleIn">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>30</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+0.1</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_ScaleOut">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-0.1</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="txt_ScaleNum">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>34</y>
+       <width>41</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

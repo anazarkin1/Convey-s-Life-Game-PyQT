@@ -1,3 +1,11 @@
+###########################################################
+#TODO: Make it scale when number of cells are changed
+#
+#TODO:Make it center on the middle element
+# self.graphicsView.centerOn(self.graphicsScene.itemAt(NUMBER_OF_CELLS/2,NUMBER_OF_CELLS/2))
+#
+#
+
 import sys,math,copy,time
 import PyQt4.QtCore as QtCore
 import PyQt4.QtGui as QtGui
@@ -9,7 +17,7 @@ from PyQt4 import QtOpenGL
 CELL_SIZE=10
 WINDOW_WIDTH=500
 WINDOW_HEIGHT=500
-NUMBER_OF_CELLS=100
+NUMBER_OF_CELLS=50
 cur_field = [[0 for col in range(NUMBER_OF_CELLS)] for row in range(NUMBER_OF_CELLS)]
 
 next_field = [[0 for col in range(NUMBER_OF_CELLS)] for row in range(NUMBER_OF_CELLS)]
@@ -133,6 +141,8 @@ class Ui_MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         self.connect(self.btn_Exit,SIGNAL("clicked()"),app.quit)
         self.btn_AutoGen.clicked.connect(self.toogleAutoGen)
         self.btn_New.clicked.connect(self.startNew)
+        self.btn_ScaleIn.clicked.connect(self.scaleViewIn)
+        self.btn_ScaleOut.clicked.connect(self.scaleViewOut)
         self.setMouseTracking(True)
 
         for i in range(NUMBER_OF_CELLS):
@@ -146,7 +156,7 @@ class Ui_MainWindow(QtGui.QMainWindow,Ui_MainWindow):
 
         self.graphicsView.setAlignment(Qt.Alignment(Qt.AlignLeft))
         self.graphicsView.setSceneRect(self.graphicsScene.itemsBoundingRect())
-        self.scaleView(0.50,0.5)
+        # self.scaleView(0.50,0.5)
         self.drawGrid()
     def toogleAutoGen(self):
         if self.timer.isActive()==True:
@@ -154,9 +164,12 @@ class Ui_MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         else:
             self.timer.start(self.timer_speed)
 
-    def scaleView(self,x,y):
-        self.graphicsView.scale(x,y)
-        self.drawGrid
+    def scaleViewIn(self):
+        self.graphicsView.scale(1.1,1.1)
+        self.drawGrid()
+    def scaleViewOut(self):
+        self.graphicsView.scale(0.9,0.9)
+        self.drawGrid()
 
         
     def drawGrid(self): 
@@ -176,11 +189,6 @@ class Ui_MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                     boxes[i][j].setBrush(checked)
                 else:
                     boxes[i][j].setBrush(unchecked)
-
-        #TODO: Make it scale when number of cells are changed
-
-        #TODO:Make it center on the middle element
-        # self.graphicsView.centerOn(self.graphicsScene.itemAt(NUMBER_OF_CELLS/2,NUMBER_OF_CELLS/2))
 
 
 
